@@ -2,6 +2,8 @@
 
 @mixin adaptiv-font($pcSize,$line, $point, $mobSize)
     @if $mobSize == 0
+        @if $pcSize<145
+            $mobSize: 50
         @if $pcSize<100
             $mobSize: 45
         @if $pcSize<58
