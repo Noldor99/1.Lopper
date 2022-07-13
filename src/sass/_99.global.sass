@@ -1,0 +1,67 @@
+body
+    font-family: 'M PLUS 1'
+    font-style: normal
+    @extend %f18-29
+    color: #FCFCFC
+// Container
+.cr-model
+    max-width: ($w_max + $padding) + px
+
+    margin: 0 auto
+    padding: 0 $sidePadding + px
+.cr-max
+    max-width: ($w_1200 + $padding) + px
+
+    margin: 0 auto
+    padding: 0 $sidePadding + px
+.cr-1146
+    max-width: (1146 + $padding) + px
+
+    margin: 0 auto
+    padding: 0 $sidePadding + px
+
+//button
+.btn__1
+    @extend %f13_5-20
+    padding: 12px 45px
+    background: $lightRed
+    border-radius: 36px
+    display: inline-flex
+//another
+
+// Animations
+
+//font
+
+%f99-118 //@extend %f99-118
+    @include adaptiv(99,118)
+    font-weight: 900
+
+%f45-67 //@extend %f45-67
+    @include adaptiv(45,67)
+    font-weight: 500
+
+%f24-43 //@extend %f24-43
+    @include adaptiv(24,43)
+    font-weight: 900
+
+%f18-29  //body @extend %f18-29
+    @include adaptiv(18,29)
+    font-weight: 400
+
+%f14_4-30  //body @extend %f14_4-30
+    @include adaptiv(14.4,30)
+    font-weight: 800
+    letter-spacing: 2px
+    color: $white
+
+%f13_5-20  //body @extend %f13_5-20
+    @include adaptiv(13.5,20)
+    font-weight: 500
+    letter-spacing: 2px
+    color: $white
+
+%f12_6-26  //body @extend %f12_6-26
+    @include adaptiv(12.6,26)
+    font-weight: 800
+    letter-spacing: 6px

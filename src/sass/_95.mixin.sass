@@ -1,0 +1,67 @@
+//font
+
+@mixin adaptiv-font($pcSize,$line, $point, $mobSize)
+    @if $mobSize == 0
+        @if $pcSize<100
+            $mobSize: 45
+        @if $pcSize<58
+            $mobSize: 24
+        @if $pcSize<46
+            $mobSize: 20
+        @if $pcSize<32
+            $mobSize: 18
+        @if $pcSize<24
+            $mobSize: 15
+        @if $pcSize<18
+            $mobSize: 13
+        @if $pcSize<14
+            $mobSize: 10
+        @if $pcSize<10
+            $mobSize: 6
+    @if 1 + 1 == 2
+        $addSize: $mobSize - $pcSize
+        $addSize2: $point - $w_max
+        $aa: ($addSize2)*($addSize)/(360-$w_max)+$pcSize
+        font-size: #{$aa+px}
+        $bb: $aa*$line/$pcSize
+        line-height: #{$bb+px}
+
+@mixin adaptiv($pcSize, $mobSize)
+    @include adaptiv-font($pcSize,$mobSize,$point_zero,0)
+    @media (max-width: $point_5)
+        @include adaptiv-font($pcSize,$mobSize,$point_5m,0)
+    @media (max-width: $point_4)
+        @include adaptiv-font($pcSize,$mobSize,$point_4m,0)
+    @media (max-width: $point_3)
+        @include adaptiv-font($pcSize,$mobSize,$point_3m,0)
+    @media (max-width: $point_2)
+        @include adaptiv-font($pcSize,$mobSize,$point_2m,0)
+    @media (max-width: $point_1)
+        @include adaptiv-font($pcSize,$mobSize,$point_1m,0)
+
+//padding
+@mixin adaptiv-padding($pcSize, $mobSize,$point,$mode)
+    $addSize: $mobSize - $pcSize
+    $addSize2: $point - $w_max
+    $aa: ($addSize2)*($addSize)/(360-$w_max)+$pcSize
+    @if $mode == 1
+        padding-top: #{$aa+px}
+    @if $mode == 2
+        padding-right: #{$aa+px}
+    @if $mode == 3
+        padding-bottom: #{$aa+px}
+    @if $mode == 4
+        padding-left: #{$aa+px}
+
+@mixin adaptivPadding($pcSize, $mobSize,$mode)
+    @include adaptiv-padding($pcSize,$mobSize,$point_zero,$mode)
+    @media (max-width: $point_5)
+        @include adaptiv-padding($pcSize,$mobSize,$point_5m,$mode)
+    @media (max-width: $point_4)
+        @include adaptiv-padding($pcSize,$mobSize,$point_4m,$mode)
+    @media (max-width: $point_3)
+        @include adaptiv-padding($pcSize,$mobSize,$point_3m,$mode)
+    @media (max-width: $point_2)
+        @include adaptiv-padding($pcSize,$mobSize,$point_2m,$mode)
+    @media (max-width: $point_1)
+        @include adaptiv-padding($pcSize,$mobSize,$point_1m,$mode)

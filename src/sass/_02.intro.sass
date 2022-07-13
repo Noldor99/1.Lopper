@@ -1,0 +1,52 @@
+.main__body
+
+.intro
+   .intro__wrap
+      display: flex
+      justify-content: space-between
+      @include adaptivPadding(150, 25,1)
+      .intro__text
+         padding-left: 25px
+         @media (max-width: $point_5)
+            padding-left: 0
+         p
+            @extend %f14_4-30
+            letter-spacing: 4px
+            padding-top: 10px
+            padding-bottom: 18px
+         h1
+            @extend %f99-118
+            padding-right: 10px
+            span
+               color: $lightRed
+
+      .intro__right
+         writing-mode: vertical-rl
+         >div
+            display: flex
+            align-items: center
+            column-gap: 30px
+            p
+               @extend %f12_6-26
+               text-transform: uppercase
+            img
+
+   .intro__varius
+      padding-top: 20px
+      padding-bottom: 5px
+      >div
+         display: flex
+         column-gap: 43px
+         align-items: center
+         border: 1px solid rgba(255, 255, 255, 0.25)
+         max-width: 766px
+         p
+            padding-left: 121px
+            padding-top: 35px
+            padding-bottom: 35px
+            @media (max-width: $point_2)
+               padding-top: 15px
+               padding-bottom: 15px
+            @include adaptivPadding(121, 10,4)
+         img
+            padding-right: 10px
